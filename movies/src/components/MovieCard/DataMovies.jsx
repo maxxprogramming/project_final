@@ -4,12 +4,11 @@ import { MovieContext } from '../../context/MoviesContext/MoviesContext';
 
 
 function DataMovies() {
-  //context
    const { dataMovies, setDataMovies } = useContext(MovieContext);
   const [paramYoutube, setParamYoutube] = useState ();
 
   const [youTubeUrl, setYouTubeUrl] = useState('https://www.youtube.com/results?search_query=');
- console.log(dataMovies)
+
  
 
 
@@ -21,7 +20,12 @@ function DataMovies() {
   useEffect(() => {
     const newYouTubeUrl = `https://www.youtube.com/results?search_query=${paramYoutube}`;
     setYouTubeUrl(newYouTubeUrl);
-    window.open(newYouTubeUrl, '_blank');
+    if (newYouTubeUrl === 'https://www.youtube.com/results?search_query=undefined' )
+    { console.log("error getting link for youtube :)")} 
+    else {
+      window.open(newYouTubeUrl, '_blank')
+    }
+    ;
   }, [paramYoutube]);
   
  

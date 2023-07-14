@@ -4,6 +4,7 @@ import { MovieContext } from '../../context/MoviesContext/MoviesContext';
 
 
 function DataMovies() {
+  //context
    const { dataMovies, setDataMovies } = useContext(MovieContext);
   const [paramYoutube, setParamYoutube] = useState ();
 

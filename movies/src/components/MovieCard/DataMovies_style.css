@@ -1,5 +1,5 @@
 .container_list {
-    border: solid red 2px;
+ 
     display: flex;
     flex-wrap: wrap;
     padding: 5%;

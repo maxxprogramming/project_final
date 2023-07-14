@@ -1,36 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import DataMovies_style from './DataMovies_style.css'
+import { MovieContext } from '../../context/MoviesContext/MoviesContext';
 
 
 function DataMovies() {
-  const [dataMovies, setDataMovies] = useState();
+   const { dataMovies, setDataMovies } = useContext(MovieContext);
   const [paramYoutube, setParamYoutube] = useState ();
 
   const [youTubeUrl, setYouTubeUrl] = useState('https://www.youtube.com/results?search_query=');
-
+ console.log(dataMovies)
  
-   //comentario1
- 
-  useEffect(() => {
-    fetchMoviesData();
-  }, []);
-
-  async function fetchMoviesData() {
-    try {
-      const response = await fetch(
-        'https://64af02ecc85640541d4e06ee.mockapi.io/movies'
-      );
-      const jsonData = await response.json();
-      setDataMovies(jsonData);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  }
-
-  useEffect(() => {
-    
-  }, [dataMovies]);
-
 
 
   function getParamYoutube(event) {

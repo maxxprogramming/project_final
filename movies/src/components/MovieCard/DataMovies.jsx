@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import DataMovies_style from './DataMovies_style.css'
 import { MovieContext } from '../../context/MoviesContext/MoviesContext';
 import MovieFollow from '../MoviesFollow/MovieFollow';
+
 
 
 function DataMovies() {
@@ -71,7 +73,10 @@ function DataMovies() {
           </div>
         ))
       ) : (
-        <p>Loading</p>
+        <button class="btn btn-primary" type="button" disabled>
+        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+        Loading...
+      </button>
       )}
     </div>
     </>

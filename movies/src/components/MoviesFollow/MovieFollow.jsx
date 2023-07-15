@@ -21,7 +21,7 @@ const handleMouseEnter = () => {
   };
 
   return (
-    <div className='container_movieFollow'>MovieFollow component
+    <div className='container_movieFollow'>MovieFollow 
 
 
     

@@ -41,14 +41,18 @@
     width: 30px;
 }
 
-#container_list_follow  {
+.container_list_follow div  {
     width: 10px;
-  
+    height: 2%;
+    border-radius: 20px;
    
     background-color: salmon;
+    cursor: pointer;
    
    position: relative;
 }
+
+
 
 
 .container_list-youtube img {

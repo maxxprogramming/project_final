@@ -8,6 +8,11 @@ import DataMovies from './components/MovieCard/DataMovies';
 function App() {
   const [dataMovies, setDataMovies] = useState();
 
+  //Follow module
+
+  const [followMovies, setFollowMovies] = useState([]);
+
+
 
 
  // PRUEBA
@@ -16,7 +21,7 @@ function App() {
   return (
     <div className="App">
      
-  <MovieContext.Provider value={{ dataMovies , setDataMovies }} >
+  <MovieContext.Provider value={{ dataMovies , setDataMovies , followMovies, setFollowMovies }} >
  <Movies />
  <DataMovies />
 </MovieContext.Provider>

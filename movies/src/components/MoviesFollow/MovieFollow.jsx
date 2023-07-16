@@ -51,8 +51,18 @@ const handleMouseEnter = () => {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
     </div>
   );
+=======
+    )}
+    </div>
+</div>
+
+</div>
+   
+  )
+>>>>>>> followModule
 }
 
 export default MovieFollow

@@ -21,36 +21,38 @@ const handleMouseEnter = () => {
   };
 
   return (
-    <div className='container_movieFollow'>MovieFollow 
+    <div className='container_movieFollow'>
+      MovieFollow
 
-
-    
-
-
-
-
-<div className='base' style={{
-  backgroundImage: `url(${backgroundImg})`,
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-  <div className='indicator'>
-    <div className='noti_count' role='status'>{followMoviesLength}</div>
-    {isModalOpen && (
-      <div className="modal">
-        <ul>
-          {followMovies.map((movie) => (
-            <li>{movie.title} ({movie.genre})</li>
-          ))}
-        </ul>
+      <div
+        className='base'
+        style={{
+          backgroundImage: `url(${backgroundImg})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+        }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className='indicator'>
+          {isModalOpen && (
+            <div className="modal indicator">
+              <ul>
+                {followMovies.map((movie, index) => (
+                  <li key={index}>
+                    {movie.title} ({movie.genre})
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          <div className='noti_count' role='status'>
+            {followMoviesLength}
+          </div>
+        </div>
       </div>
-    )}
-  </div>
-</div>
-
-</div>
-   
-  )
+    </div>
+  );
 }
 
 export default MovieFollow

@@ -25,6 +25,7 @@
     border-radius: 20px;
     margin-left: 70%;
     
+    
 
 }
 
@@ -36,7 +37,10 @@
 
 
 .modal {
-    width: 300px;
+    width: 200px;
     display: flex;
     flex-wrap: wrap;
+    margin-left: 9%;
+    text-align: left;
+ 
 }

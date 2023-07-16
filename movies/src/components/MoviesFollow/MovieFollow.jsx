@@ -30,7 +30,7 @@ const handleMouseEnter = () => {
 
 
 <div className='base' style={{
-  backgroundImage: `url(${backgroundImg})`,
+  backgroundImage: `url(${backgroundImg ? backgroundImg : "https://i.postimg.cc/02DC0j08/popcorn.png"})`,
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
 }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>

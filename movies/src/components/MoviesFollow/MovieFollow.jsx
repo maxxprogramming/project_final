@@ -37,7 +37,7 @@ const handleMouseEnter = () => {
   <div className='indicator'>
     <div className='noti_count' role='status'>{followMoviesLength}</div>
     {isModalOpen && (
-      <div className="modal">
+      <div className="modal indicator">
         <ul>
           {followMovies.map((movie) => (
             <li>{movie.title} ({movie.genre})</li>

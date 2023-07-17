@@ -3,15 +3,14 @@ import 'bootstrap/dist/css/bootstrap.css';
 import DataMovies_style from './DataMovies_style.css'
 import { MovieContext } from '../../context/MoviesContext/MoviesContext';
 import MovieFollow from '../MoviesFollow/MovieFollow';
-
+import Filters from '../Filter/Filter';
 
 
 function DataMovies() {
-   const { dataMovies, setDataMovies , followMovies, setFollowMovies} = useContext(MovieContext);
+  const { dataMovies, setDataMovies , followMovies, setFollowMovies} = useContext(MovieContext);
   const [paramYoutube, setParamYoutube] = useState ();
   const [youTubeUrl, setYouTubeUrl] = useState('https://www.youtube.com/results?search_query=');
 
- 
 
 
   function getParamYoutube(event) {
@@ -20,7 +19,6 @@ function DataMovies() {
   }
 
   //Movie follow module
-
 
   function addFollow(event) {
     let dataFilter = dataMovies.filter((param) => param.id == event.target.id);
@@ -37,11 +35,6 @@ function DataMovies() {
     }
   }
   
-
-  
-
-
-
   
   useEffect(() => {
     const newYouTubeUrl = `https://www.youtube.com/results?search_query=${paramYoutube}`;
@@ -53,12 +46,13 @@ function DataMovies() {
     }
     ;
   }, [paramYoutube]);
-  
- 
+
+
 
   return (
   <>  <MovieFollow />
-    
+
+
     <div className='container_list'>
    
       {dataMovies ? (

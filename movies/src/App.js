@@ -1,9 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-import { MovieContext } from './context/MoviesContext/MoviesContext';
-import { useState } from 'react';
-import Movies from './api/movies';
-import DataMovies from './components/MovieCard/DataMovies';
+
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./app/pages/login/Login";
+import Register from "./app/pages/register/Register";
+import { AuthProvider } from "./app/context/authContext/AuthContext";
+import { MovieContext } from "./context/MoviesContext/MoviesContext";
+import { useState } from "react";
+import Movies from "./api/movies";
+import DataMovies from "./components/MovieCard/DataMovies";
 
 function App() {
   const [dataMovies, setDataMovies] = useState();
@@ -12,19 +16,24 @@ function App() {
 
   const [followMovies, setFollowMovies] = useState([]);
 
-
-
-
- // PRUEBA
-
+  // PRUEBA
 
   return (
     <div className="App">
-     
-  <MovieContext.Provider value={{ dataMovies , setDataMovies , followMovies, setFollowMovies }} >
- <Movies />
- <DataMovies />
-</MovieContext.Provider>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/register" element={<Register></Register>} />
+            <Route path="/login" element={<Login></Login>} />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
+      <MovieContext.Provider
+        value={{ dataMovies, setDataMovies, followMovies, setFollowMovies }}
+      >
+        <Movies />
+        <DataMovies />
+      </MovieContext.Provider>
     </div>
   );
 }
